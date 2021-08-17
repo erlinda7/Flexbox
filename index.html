@@ -27,14 +27,29 @@
 
             /*shortcut para flex-wrap es flex-flow: flex-direction flex-wrap*/
             flex-flow: row wrap;
-            justify-content: center; /*se alinean todos los elementos en el principal -flex-direction decide */
+            justify-content: flex-start; /*se alinean todos los elementos en el principal -flex-direction decide */
             /*flex-start | center | flex-end | space-between | space-around | space-evenly*/
+
+            align-items: center; /*si es fila empieza a hacer caso al ancho y si es columna empieza a hacer caso al alto en el cross axis eje secundario*/
+            /*stretch | flex-start | flex-end | center | baseline*/
+            /*baseline se alinea a la base del texto*/
+            /*Define la alineacion de los hijos en el eje transversal(cross axis), dentro de cada linea*/
+
+            align-content: space-between;
+            /*Define la alineacion de los hijos en el eje tranversal(cross axis), NO funciona cuando los hijos estan en UNA sola linea SOLO CON WRAP
+            (cuando flex-wrap: nowrap NO FUNCIONA)*/
+            /*todos las lineas se alinean como si fueran un solo grupo*/
         }
         .item {
             border: medium solid #999;
-            width: 20%; /*flex-wrap: nowrap , si no caben, la caja trata de alinear en una solo linea sin hacer caso al tamaño, con direction row*/
-            height: 20%; /*direction column*/
+            width: 20%;
+            /*height: 20%; */ 
+            /*para align-items, align-content si van ser stretch no obedecera si tenemos definido alto y ancho del item*/
             background-color: #666;
+        }
+        .item:nth-child(2),
+        .item:nth-child(17) {
+            font-size: 250%;
         }
     </style>
 </head>
