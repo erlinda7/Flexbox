@@ -68,8 +68,18 @@
 
             /*si existe una flex-basis ya no hace caso al width o height dependiendo de la direccion porque tiene menor especifidad */
 
-            flex: 0 1 150px
+            flex: 0 1 150px;
             /*Es un shorhand de las propiedades fle-grow flex-shrink y flex-basis en ese orden*/
+
+            order: 0;
+            /*Representa el orden que tendran los elementos hijos en la caja flexbox
+            Valor por defecto: 0
+            Se aceptan valores positivos y negativos
+            Un valor menor siempre ira antes que un valor mayor*/
+
+            align-self: stretch; /*si pongo asi afecta a todos los hijos*/
+            /*stretch | flex-start | flex-end | center | baseline*/
+            /*Sobreescribe el valor de la propiedad align-items solo para el elemento hijo especificado en el eje transversal*/
         }
 
         /* 79.77*3 = 239.31-255 = 14.31 / 4 = 3.57   //ponemos la caja box en 225 para flex-shrink
@@ -82,9 +92,11 @@
         .item.item:nth-child(2) {
             /* flex-grow: 3; */
             /* flex-shrink: 2; */
+            order: -1;
         }
         .item.item:nth-child(3) {
             /* flex-grow: 2; */
+            align-self: center;
         }
         /*.item:nth-child(2),
         .item:nth-child(17) {
@@ -97,6 +109,8 @@
         <article class="item">Flex Item 1</article>
         <article class="item">Flex Item 2</article>
         <article class="item">Flex Item 3</article>
+        <article class="item">Flex Item 4</article>
+        <article class="item">Flex Item 5</article>
     </section>
     <br/><br/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
