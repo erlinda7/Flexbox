@@ -6,18 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprendiendo flexbox</title>
     <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box; /*el tamaño de la caja se considera desde el borde*/
+        }
         .container {
             background-color: #333;
             height: 30vh;
 
             display: flex;
-            flex-direction: row;
-            /* flex-direction: row-reverse; */
-            /* flex-direction: column; */
-            /* flex-direction: column-reverse; */
-            
+            flex-direction: row-reverse;
+            /*row | row-reserve | column | column-reverse*/
+
+            /* flex-wrap: nowrap; */   /*no envuelvas los quiero en una sola fila o una sola columna, y se acomodan sino mas espacio aparece scroll*/
+            flex-wrap: wrap-reverse; /*considera el tamaño y sino no caben los manda a otra fila con su tamaño fijado*/
+            /*nowrap | wrap | wrap-reverse*/
+
+            /*se pueden realizar las combinaciones con flex-direction y flex-wrap,   tambien se pueden poner tamaños a los item */
         }
         .item {
+            border: medium solid #999;
+            width: 20%; /*flex-wrap: nowrap , si no caben, la caja trata de alinear en una solo linea sin hacer caso al tamaño, con direction row*/
+            height: 20%; /*direction column*/
             background-color: #666;
         }
     </style>
