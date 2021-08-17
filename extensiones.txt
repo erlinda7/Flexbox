@@ -1,0 +1,7 @@
+css flexbox cheatsheet
+
+ctrl + shift + p
+
+article.item*3{Flex Item $}
+
+section.contanier>article.item*19{Item $}
