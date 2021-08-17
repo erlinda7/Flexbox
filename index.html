@@ -14,43 +14,62 @@
         .container {
             background-color: #333;
             height: 30vh;
+            width: 1000px;
 
             display: flex;
-            flex-direction: row-reverse;
+            flex-direction: row;
             /*row | row-reserve | column | column-reverse*/
 
             /* flex-wrap: nowrap; */   /*no envuelvas los quiero en una sola fila o una sola columna, y se acomodan sino mas espacio aparece scroll*/
-            flex-wrap: wrap-reverse; /*considera el tamaño y sino no caben los manda a otra fila con su tamaño fijado*/
+            flex-wrap: nowrap; /*considera el tamaño y sino no caben los manda a otra fila con su tamaño fijado*/
             /*nowrap | wrap | wrap-reverse*/
 
             /*se pueden realizar las combinaciones con flex-direction y flex-wrap,   tambien se pueden poner tamaños a los item */
 
             /*shortcut para flex-wrap es flex-flow: flex-direction flex-wrap*/
-            flex-flow: row wrap;
+            flex-flow: row nowrap;
             justify-content: flex-start; /*se alinean todos los elementos en el principal -flex-direction decide */
             /*flex-start | center | flex-end | space-between | space-around | space-evenly*/
 
-            align-items: center; /*si es fila empieza a hacer caso al ancho y si es columna empieza a hacer caso al alto en el cross axis eje secundario*/
+            align-items: stretch; /*si es fila empieza a hacer caso al ancho y si es columna empieza a hacer caso al alto en el cross axis eje secundario*/
             /*stretch | flex-start | flex-end | center | baseline*/
             /*baseline se alinea a la base del texto*/
             /*Define la alineacion de los hijos en el eje transversal(cross axis), dentro de cada linea*/
 
-            align-content: space-between;
+            align-content: flex-start;
             /*Define la alineacion de los hijos en el eje tranversal(cross axis), NO funciona cuando los hijos estan en UNA sola linea SOLO CON WRAP
             (cuando flex-wrap: nowrap NO FUNCIONA)*/
             /*todos las lineas se alinean como si fueran un solo grupo*/
         }
         .item {
             border: medium solid #999;
-            width: 20%;
-            /*height: 20%; */ 
+            /*width: 20%;
+            height: 20%; */ 
             /*para align-items, align-content si van ser stretch no obedecera si tenemos definido alto y ancho del item*/
+
+            width: 100px;
             background-color: #666;
+
+            flex-grow: 1;
+            /*Cuando la caja flexbox tenga espacio sobrante es la habilidad o el factor de crecer, valor por
+            defecto es 0, NO se aceptan valores negativos*/
+
+            flex-wrap: 1;
+            /*Cuando la caja flexible NO tenga espacio sobrante, es la habilidad o el factor de encogerse, valor por
+            defecto es 1, NO se aceptan valores negativos*/
+            
+            flex-basis: auto;
         }
-        .item:nth-child(2),
+        .item.item:nth-child(2) {
+            flex-grow: 3;
+        }
+        .item.item:nth-child(3) {
+            flex-grow: 2;
+        }
+        /*.item:nth-child(2),
         .item:nth-child(17) {
-            font-size: 250%;
-        }
+             font-size: 250%; 
+        }*/
     </style>
 </head>
 <body>
@@ -59,7 +78,8 @@
         <article class="item">Flex Item 2</article>
         <article class="item">Flex Item 3</article>
     </section>
-    <br/><br/>
+    <br/><br/><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <section class="container">
         <article class="item">Flex Item 1</article>
         <article class="item">Flex Item 2</article>
